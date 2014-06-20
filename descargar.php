@@ -63,9 +63,9 @@
             <p>
             Puede descargar ahora el libro con el link expuesto m&aacute;s abajo.
             <b>Opcionalmente</b> puede dejarnos sus datos:<br/>
-            <form action="descarga.php" method="POST" id="download">
+            <form action="descarga.php" method="POST" id="download" onSubmit="return chkSubmit();">
                 <span style="padding: 30px 5px;">Nombre: </span>
-                <input type="text" name="nombre" size="25"/><br/>
+                <input type="text" name="nombre" id="tnombre" size="25"/><br/>
 
                 <span style="padding: 30px 5px;">Email: </span>
                 <input type="text" name="email" size="35"/><br/>
@@ -95,22 +95,34 @@
             
 	  </div>
 	</div>
-	<!-- ENDS MAIN -->
+	<script type="text/javascript">                    
+            function setAction(action)
+                {
+                document.getElementById("download").action = action;
+                if (chkSubmit()) document.getElementById("download").submit();
+                }
+
+              function chkSubmit(){
+                tn = document.getElementById("tnombre").value;
+                tns = tn.split();
+                if (tns.length === 1 && tn.length > 14)
+                    {
+                    alert("Mal nombre");
+                    return false;
+                    }
+                else
+                    return true;
+              }
+            </script> 
 	
-	<!-- JavaScript at the bottom for fast page loading -->
-	
-	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
 	
-	<!-- scripts concatenated and minified via build script -->
 	<script src="js/custom.js"></script>
 	
-	<!-- superfish -->
 	<script  src="js/superfish-1.4.8/js/hoverIntent.js"></script>
 	<script  src="js/superfish-1.4.8/js/superfish.js"></script>
 	<script  src="js/superfish-1.4.8/js/supersubs.js"></script>
-	<!-- ENDS superfish -->
 	
 	<script src="js/tweet/jquery.tweet.js" ></script>
 	<script src="js/jquery.isotope.min.js"></script>
@@ -118,8 +130,9 @@
 	<script src="js/css3-mediaqueries.js"></script>
 	<script src="js/tabs.js"></script>
 	<script  src="js/poshytip-1.1/src/jquery.poshytip.min.js"></script>
-	<script src="js/moveform.js"></script>
-	<!-- end scripts -->
+	<script src="js/moveform.js"></script>       
+        
+        
 <!-- Google Code for descargar libro Conversion Page -->
 <script type="text/javascript">
 /* <![CDATA[ */
@@ -138,14 +151,6 @@ var google_conversion_value = 0;
 <img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/989940321/?value=0&amp;label=lrt7CJeY4wQQ4ZSF2AM&amp;guid=ON&amp;script=0"/>
 </div>
 </noscript>
-
-<script type="text/javascript">                    
-function setAction(action)
-    {
-    document.getElementById("download").action = action;
-    document.getElementById("download").submit();
-    }
-</script>
 
 </body>
 </html>
