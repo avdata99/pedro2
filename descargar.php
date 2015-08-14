@@ -105,7 +105,7 @@
               function chkSubmit(){
                 tn = document.getElementById("tnombre").value;
                 tns = tn.split();
-                if (tns.length === 1 && tn.length > 10)
+                if (tns.length === 1 && tn.length > 19)
                     {
                     alert("Mal nombre");
                     return false;
