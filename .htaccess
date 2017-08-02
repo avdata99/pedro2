@@ -1,15 +1,29 @@
+
+RewriteEngine on
 <IfModule mod_rewrite.c>
 
     RewriteCond %{HTTP_HOST} ^pedro2\.com\.ar
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
     RewriteRule (.*) http://pedro2.data99.com.ar/$1 [R=301,L]
 
     RewriteCond %{HTTP_HOST} ^pedroii\.com\.ar
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
     RewriteRule (.*) http://pedro2.data99.com.ar/$1 [R=301,L]
 
     RewriteCond %{HTTP_HOST} ^pedrosegundo\.com\.ar
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
     RewriteRule (.*) http://pedro2.data99.com.ar/$1 [R=301,L]
 
     #quitar www
     RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
     RewriteRule ^(.*)$ http://%1%{REQUEST_URI} [L,R=301]
 </IfModule>

@@ -5,5 +5,7 @@
  rsync -av --progress --rsh='ssh -p 987' \
     --exclude='.git' \
     --exclude='error_log' \
+    --exclude='cgi-bin/' \
+    --exclude='pedroII-2012/' \
     piter@pedro2.data99.com.ar:/home/piter/www/ \
     ./
