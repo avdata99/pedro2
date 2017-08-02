@@ -14,7 +14,7 @@
     try {
         $r = $ml->avisar('Se ha descargado Pedro II', $txt);
     } catch (Exception $e) {
-        # nada
+        # $error = $ml->lastError;
     }
     
     //$f = "pedroII/pedroII-parte1.pdf";
