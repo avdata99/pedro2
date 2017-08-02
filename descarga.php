@@ -11,8 +11,12 @@
     $txt .= 'EMAIL: '.$_POST['email'].'<br/><br/>';
     $txt .= 'COMENTARIOS: <b>'.$_POST['coment'].'</b><br/><br/>';
     $txt .= 'No responda este correo, es solo una notificacion<br/>';
-    $r = $ml->avisar('Se ha descargado Pedro II', $txt);
-
+    try {
+        $r = $ml->avisar('Se ha descargado Pedro II', $txt);
+    } catch (Exception $e) {
+        # nada
+    }
+    
     //$f = "pedroII/pedroII-parte1.pdf";
     $f = "pedroII-2012/pedro_II.pdf";
     //header("Content-type: application/octet-stream");//dice que es binario / exe
