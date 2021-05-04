@@ -1,4 +1,4 @@
 # pedro2
 Sitio web de difusion del libro "Pedro II"
   
-Publiado en [pedro2.data99.com.ar](http://pedro2.data99.com.ar).
+Publiado en [avdata99.github.io/pedro2](http://avdata99.github.io/pedro2/).
